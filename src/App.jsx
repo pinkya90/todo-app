@@ -6,12 +6,18 @@ import { TodoList } from "./components/Todolist";
 
 function App() {
   
-let x=3;
+const todos =[
+  { input: 'Hello! Add your first todo!',complete:true},
+  { input: 'get the groceries!',complete:false},
+  { input: 'learn how to web design!',complete:false},
+  { input: 'say hi to gran gran',complete:true}
+
+]
   return (
     <>
-<Header />
-<Tabs />
-<TodoList />
+<Header todos={todos}/>
+<Tabs todos={todos} />
+<TodoList todos={todos} />
 <TodoInput />
     </>
   )
