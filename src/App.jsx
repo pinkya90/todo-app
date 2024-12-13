@@ -17,6 +17,8 @@ const [todos, setTodos] =useState([{ input: 'Hello! Add your first todo!',comple
 
 function handleAddTodo(newTodo){
 
+  const newTodoList = [...todos, {input: newTodo, complete: false }]
+  setTodos(newTodoList)
 }
 function handleEditTodo(){
 
@@ -28,8 +30,8 @@ function handleDeleteTodo(){
     <>
 <Header todos={todos}/>
 <Tabs todos={todos} />
-<TodoList todos={todos} />
-<TodoInput />
+<TodoList todos={todos} name={'abx'} />
+<TodoInput handleAddTodo={handleAddTodo}  />
     </>
   )
 }
